@@ -1,0 +1,57 @@
+<!DOCTYPE html >
+<html>
+  <head> 
+      <title>Bootstrap 101 Template</title> 
+      <meta name="viewport" content="width=device-width, initialscale=1.0"> 
+      <!-- Bootstrap --> 
+      <link href="css/bootstrap.min.css" rel="stylesheet">  
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+      <script src="https://code.jquery.com/jquery.js"></script> 
+      <!-- Include all compiled plugins (below), or include individual files as needed --> 
+      <script src="js/bootstrap.min.js"></script>  
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	  <script type="text/javascript" src="js/app.js"></script> 
+     
+   </head> 
+<body ng-app="myModule" ng-controller="myController">
+ 
+	  <table class="table table-striped"> 
+   <caption>Striped Table Layout</caption> 
+   <thead> 
+      <tr> 
+         <th>index</th> 
+         <th>userName</th> 
+         <th>Email</th> 
+         <th>Edit</th> 
+         <th>Delete</th> 
+	  </tr> 
+   </thead> 
+   <tbody> 
+      <tr ng-repeat="user in data"> 
+	     <td>{{$index+1}}</td> 
+         <td>{{user.username}}</td> 
+        
+         <td>{{user.email}}</td> 
+    
+      </tr> 
+      
+   </tbody> 
+</table> 
+
+
+
+<script>
+  var myApp=angular.module("myModule",[]);
+  myApp.controller("myController",function($scope){
+                $scope.data=[{username: "shohel",email:"shohel@gmail.com"},
+	{username: "kajol",email:"kl@gmail.com"},
+	{username: "robi", email:"rr@gmail.com"}]
+			
+				
+
+});
+
+</script>
+</body>
+</html>
